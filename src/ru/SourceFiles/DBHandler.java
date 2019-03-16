@@ -1,7 +1,8 @@
-package ru.mephi.lab;
+package ru.SourceFiles;
 
 import org.sqlite.JDBC;
 
+import javax.swing.*;
 import java.sql.*;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class DBHandler {
         //Registering driver for work with DB
         DriverManager.registerDriver(new JDBC());
         //Completed connect with DB
-        this.connection = DriverManager.getConnection(String.format(this.CONNECT_ADDRESS, dBName));
+        this.connection = DriverManager.getConnection(String.format(CONNECT_ADDRESS, dBName));
     }
 
     public List<SuicideStatisticsRow> getAllRowsFromTable(String tableName){

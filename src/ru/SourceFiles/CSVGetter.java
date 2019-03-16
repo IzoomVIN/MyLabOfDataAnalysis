@@ -1,4 +1,4 @@
-package ru.mephi.lab;
+package ru.SourceFiles;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -10,7 +10,7 @@ public class CSVGetter {
     CSVGetter(){}
 
     public List<SuicideStatisticsRow> getListData(String docName){
-        String path = String.format("../../../../files/%s.csv", docName);
+        String path = String.format("../files/%s.csv", docName);
         List<SuicideStatisticsRow> resultList = new ArrayList<>();
         BufferedReader reader = null;
 

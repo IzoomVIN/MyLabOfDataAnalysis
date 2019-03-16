@@ -1,4 +1,4 @@
-package ru.mephi.lab;
+package ru.SourceFiles;
 
 public class SuicideStatisticsRow {
     private String country, sex, age;
