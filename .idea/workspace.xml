@@ -4,9 +4,10 @@
     <list default="true" id="9df2b28e-40ea-4edc-beac-5cadf70fb812" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DB/SuicideDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/DB/SuicideDB.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/files/suicideMaster.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/files/suicideMaster.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/files/suicideMaster.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/mephi/lab/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/mephi/lab/DBHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/mephi/lab/CSVGetter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/mephi/lab/DBHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/mephi/lab/SuicideStatisticsRow.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,38 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/CSVGetter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/DBHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/mephi/lab/DBHandler.java">
+        <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="74" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/mephi/lab/CSVGetter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/mephi/lab/SuicideStatisticsRow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="21" selection-start-line="21" selection-end-line="21" />
-              <folding>
-                <element signature="method#SuicideStatisticsRow#0;class#SuicideStatisticsRow#0" />
-              </folding>
+            <state>
+              <caret column="23" selection-start-column="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -73,6 +65,9 @@
         <option value="$PROJECT_DIR$/src/ru/mephi/lab/CSVGetter.java" />
         <option value="$PROJECT_DIR$/src/Form.form" />
         <option value="$PROJECT_DIR$/src/ru/mephi/lab/DBHandler.java" />
+        <option value="$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java" />
+        <option value="$PROJECT_DIR$/src/ru/SourceFiles/CSVGetter.java" />
+        <option value="$PROJECT_DIR$/src/ru/SourceFiles/DBHandler.java" />
       </list>
     </option>
   </component>
@@ -109,6 +104,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ru" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="MyLabOfDataAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyLabOfDataAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="SourceFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -118,8 +120,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552730672766" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552730980117" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Study/Весна 2019/ИРФМ/JavaCode/src/SQLScript.java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Slava\Desktop\My_programs(GIT)\Java\MyLabOfDataAnalysis\src\ru" />
+      <recent name="C:\Users\Slava\Desktop\My_programs(GIT)\Java\MyLabOfDataAnalysis\src\ru\" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -148,6 +156,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -223,6 +232,27 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/DBHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="66" selection-start-line="14" selection-start-column="66" selection-end-line="14" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/CSVGetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="40" lean-forward="true" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="23" selection-start-column="23" selection-end-column="23" />
         </state>
       </provider>
     </entry>
