@@ -39,7 +39,7 @@ public class DBHandler {
             List<SuicideStatisticsRow> resultList = new ArrayList<>();
             // from resultSet we take rows of result SQL search
             // in ResultSet we give SQL code
-            ResultSet resultSet = statement.executeQuery("");
+            ResultSet resultSet = statement.executeQuery(String.format("SELECT*FROM %s;", tableName));
             //get all rows from result set and give result to resultList
             while (resultSet.next()){
                 resultList.add(new SuicideStatisticsRow(resultSet.getString("Country"),
@@ -77,16 +77,40 @@ public class DBHandler {
 
     public void createTable(String tableName){
         try(Statement statement = this.connection.createStatement()){
-            statement.execute(String.format("CREATE TABLE %s (\n", tableName)+
-                    "Country TEXT PRIMARY KEY,\n"+
-                    "Year INTEGER PRIMARY KEY,\n"+
-                    "Sex TEXT PRIMARY KEY,\n"+
-                    "Age TEXT PRIMARY KEY,\n"+
-                    "Suicides_Count INTEGER,\n"+
-                    "Population INTEGER,\n"+
-                    "Suicides_to_100_K_Population INTEGER\n);");
+            ResultSet names = statement.executeQuery("SELECT*FROM sqlite_master\n" +
+                    "WHERE type='table';");
+            if (names != null) {
+                boolean FLAG = true;
+                while(names.next()){
+                    if (tableName.equals(names.getString(""))){
+                        FLAG = false;
+                        break;
+                    }
+                    if (!FLAG){
+                        String message = "Table with this name is exist\n" +
+                                "Input new name:\n";
+                        statement.execute("DROP TABLE %s;");
+                    }
+                }
+            }
+            executeCreateTable(statement, tableName);
         }catch(SQLException e){
             System.out.print(e.getMessage());
+        }
+    }
+
+    private void executeCreateTable(Statement statement,String tableName){
+        try {
+            statement.execute(String.format("CREATE TABLE %s (\n", tableName) +
+                    "Country TEXT PRIMARY KEY,\n" +
+                    "Year INTEGER PRIMARY KEY,\n" +
+                    "Sex TEXT PRIMARY KEY,\n" +
+                    "Age TEXT PRIMARY KEY,\n" +
+                    "Suicides_Count INTEGER,\n" +
+                    "Population INTEGER,\n" +
+                    "Suicides_to_100_K_Population INTEGER\n);");
+        }catch (SQLException e){
+            e.printStackTrace();
         }
     }
 }
