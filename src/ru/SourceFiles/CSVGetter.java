@@ -62,7 +62,6 @@ public class CSVGetter {
     }
 
     private boolean checkToReality(SuicideStatisticsRow row){
-        return ((row.getSuicidesCount() != row.getPopulation()) &&
-                ((row.getPopulation() - row.getSuicidesCount()) < (int)row.getPopulation()*0.7));
+        return ((row.getPopulation() - row.getSuicidesCount()) > (int)row.getPopulation()*0.7);
     }
 }
