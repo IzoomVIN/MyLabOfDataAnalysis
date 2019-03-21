@@ -2,7 +2,6 @@ package ru.SourceFiles;
 
 import org.sqlite.JDBC;
 
-import javax.swing.*;
 import java.sql.*;
 
 import java.util.ArrayList;
@@ -12,13 +11,13 @@ import java.util.List;
 public class DBHandler {
 
     // Constant of connect address
-    private static final String CONNECT_ADDRESS = "jdbs:sqlite:../DB/%s.db";
+    private static final String CONNECT_ADDRESS = "jdbc:sqlite:src/ru/DB/%s.db";
     //Object of connect with DB
     private Connection connection;
 
     /**Use scheme of "Only class instance" for optimization of the memory*/
     private static DBHandler instance = null;
-    public static synchronized DBHandler getInstance(String dBName) throws SQLException{
+    static synchronized DBHandler getInstance(String dBName) throws SQLException{
         if (instance == null){
             instance = new DBHandler(dBName);
         }
@@ -56,8 +55,8 @@ public class DBHandler {
         }
     }
 
-    public void setInformationToTable(String dBName, SuicideStatisticsRow row){
-        try(PreparedStatement statement = this.connection.prepareStatement(String.format("INSERT INTO %s ", dBName) +
+    void setInformationToTable(String tableName, SuicideStatisticsRow row){
+        try(PreparedStatement statement = this.connection.prepareStatement(String.format("INSERT INTO %s ", tableName) +
                         "('Country', 'Year', 'Sex', 'Age', 'Suicides_Count', " +
                         "'Population', 'Suicides_to_100_K_Population') " +
                         "VALUES(?, ?, ?, ?, ?, ?, ?")){
@@ -75,28 +74,46 @@ public class DBHandler {
         }
     }
 
-    public void createTable(String tableName){
+    String createTable(String tableName){
         try(Statement statement = this.connection.createStatement()){
             ResultSet names = statement.executeQuery("SELECT*FROM sqlite_master\n" +
                     "WHERE type='table';");
             if (names != null) {
                 boolean FLAG = true;
-                while(names.next()){
-                    if (tableName.equals(names.getString(""))){
+                while(names.next()) {
+                    if (tableName.equals(names.getString(""))) {
                         FLAG = false;
                         break;
                     }
-                    if (!FLAG){
-                        String message = "Table with this name is exist\n" +
-                                "Input new name:\n";
-                        statement.execute("DROP TABLE %s;");
-                    }
+                }
+                if (!FLAG){
+                    return "Table with this name is exist";
                 }
             }
             executeCreateTable(statement, tableName);
         }catch(SQLException e){
             System.out.print(e.getMessage());
         }
+        return null;
+    }
+
+    ArrayList<String> getAllTMfromDB(){
+        ArrayList<String> outputArray = new ArrayList<>();
+        try(Statement statement = this.connection.createStatement()) {
+            ResultSet names = statement.executeQuery("SELECT*FROM sqlite_master\n" +
+                    "WHERE type='table';");
+            if (names != null) {
+                while(names.next()) {
+                    outputArray.add(names.getString(""));
+                }
+            }else{
+                outputArray = null;
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return outputArray;
     }
 
     private void executeCreateTable(Statement statement,String tableName){
@@ -110,7 +127,7 @@ public class DBHandler {
                     "Population INTEGER,\n" +
                     "Suicides_to_100_K_Population INTEGER\n);");
         }catch (SQLException e){
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 }

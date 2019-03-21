@@ -1,11 +1,9 @@
 package ru.GUI;
 
-import ru.SourceFiles.LogicProgramm;
-
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class MainMenuWindow extends JFrame{
     private JButton buttonVT;
@@ -13,6 +11,7 @@ public class MainMenuWindow extends JFrame{
     private JButton buttonID;
     private JPanel MMPanel;
     private JList ListOfTable;
+    private DefaultListModel<String> listOfTable;
 
     public MainMenuWindow() {
         super("Suicide");
@@ -21,6 +20,7 @@ public class MainMenuWindow extends JFrame{
         buttonVT.setText("View table");
         buttonID.setText("Input data");
         MainMenuLabel.setText("Main Menu");
+        listOfTable = new DefaultListModel<>();
 
         size.height = 400;
         size.width = 400;
@@ -40,12 +40,27 @@ public class MainMenuWindow extends JFrame{
         buttonID.addActionListener(al);
     }
 
-    public void addTableInList(String table){
-        ListOfTable.add(table, null);
+    public void setActionListenerVT(ActionListener al){
+        buttonVT.addActionListener(al);
     }
 
-    public void setActionListenerVT(ActionListener al){
-        buttonID.addActionListener(al);
+    public String getSelectedValue(){
+        return ListOfTable.getSelectedValue().toString();
+    }
+
+    public ArrayList<String> getAllTableName(){
+        ArrayList<String> outputArray = new ArrayList<>();
+
+        for(int i = 0; i < listOfTable.getSize(); i++){
+            outputArray.add(listOfTable.get(i));
+        }
+
+        return outputArray;
+    }
+
+    public void addTableInList(String table){
+        listOfTable.add(0,table);
+        ListOfTable.setModel(listOfTable);
     }
 
     public void start(){

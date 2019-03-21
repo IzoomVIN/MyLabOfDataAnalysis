@@ -6,17 +6,17 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CSVGetter {
+class CSVGetter {
     CSVGetter(){}
 
-    public List<SuicideStatisticsRow> getListData(String docName){
+    static List<SuicideStatisticsRow> getListData(String docName){
         String path = String.format("../files/%s.csv", docName);
         List<SuicideStatisticsRow> resultList = new ArrayList<>();
         BufferedReader reader = null;
 
         try{
             reader = new BufferedReader(new FileReader(path));
-            String line = "";
+            String line;
             String csvSplitBy = ",";
 
             while ((line = reader.readLine()) != null){
@@ -25,9 +25,9 @@ public class CSVGetter {
                         rowFromFile[2], rowFromFile[3], Integer.valueOf(rowFromFile[4]),
                         Integer.valueOf(rowFromFile[5]), Integer.valueOf(rowFromFile[6]));
 
-                /** Check to reality and null suicide count*/
+                /* Check to reality and null suicide count*/
                 if (nullSuicideCountCheck(row) && checkToReality(row)) {
-                    /** Check to replicate in result list*/
+                    /* Check to replicate in result list*/
                     boolean FLAG = false;
                     for (SuicideStatisticsRow rowFromArray : resultList) {
                         if (row.equals(rowFromArray)) {
@@ -55,13 +55,13 @@ public class CSVGetter {
         return resultList;
     }
 
-    private boolean nullSuicideCountCheck(SuicideStatisticsRow row){
+    private static boolean nullSuicideCountCheck(SuicideStatisticsRow row){
         return !(((row.getAge() == null ) || (row.getAge().equals(""))) ||
                 ((row.getCountry() == null ) || (row.getCountry().equals(""))) ||
                 ((row.getSex() == null ) || (row.getSex().equals(""))));
     }
 
-    private boolean checkToReality(SuicideStatisticsRow row){
-        return ((row.getPopulation() - row.getSuicidesCount()) > (int)row.getPopulation()*0.7);
+    private static boolean checkToReality(SuicideStatisticsRow row){
+        return ((row.getPopulation() - row.getSuicidesCount()) > (row.getPopulation()*0.7));
     }
 }
