@@ -1,15 +1,20 @@
 package ru.GUI;
 
+import ru.SourceFiles.LogicProgramm;
+
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class MainMenuWindow extends JFrame{
     private JButton buttonVT;
     private JLabel MainMenuLabel;
     private JButton buttonID;
     private JPanel MMPanel;
+    private JList ListOfTable;
 
-    MainMenuWindow() {
+    public MainMenuWindow() {
         super("Suicide");
         Dimension size = new Dimension();
 
@@ -31,9 +36,24 @@ public class MainMenuWindow extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void main(String args[]){
-        MainMenuWindow menu = new MainMenuWindow();
-        menu.setVisible(true);
-
+    public void setActionListenerID(ActionListener al){
+        buttonID.addActionListener(al);
     }
+
+    public void addTableInList(String table){
+        ListOfTable.add(table, null);
+    }
+
+    public void setActionListenerVT(ActionListener al){
+        buttonID.addActionListener(al);
+    }
+
+    public void start(){
+        this.setVisible(true);
+    }
+
+    public void stop(){
+        this.setVisible(false);
+    }
+
 }
