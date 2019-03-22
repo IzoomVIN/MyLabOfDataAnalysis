@@ -2,10 +2,11 @@ package ru.SourceFiles;
 
 public class SuicideStatisticsRow {
     private String country, sex, age;
-    private int year, suicidesCount, population, suicidesTo100KPopulation;
+    private int year, suicidesCount, population;
+    private double suicidesTo100KPopulation;
 
     SuicideStatisticsRow(String country, int year, String sex, String age, int suicidesCount,
-                         int population, int suicidesTo100KPopulation ){
+                         int population, double suicidesTo100KPopulation ){
         this.country = country;
         this.year = year;
         this.sex = sex;
@@ -46,7 +47,7 @@ public class SuicideStatisticsRow {
     }
 
     // suicidesTo100KPopulation
-    public int getSuicidesTo100KPopulation() {
+    public double getSuicidesTo100KPopulation() {
         return suicidesTo100KPopulation;
     }
 

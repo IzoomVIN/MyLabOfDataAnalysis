@@ -10,7 +10,7 @@ class CSVGetter {
     CSVGetter(){}
 
     static List<SuicideStatisticsRow> getListData(String docName){
-        String path = String.format("../files/%s.csv", docName);
+        String path = String.format("src/ru/files/%s.csv", docName);
         List<SuicideStatisticsRow> resultList = new ArrayList<>();
         BufferedReader reader = null;
 
@@ -18,12 +18,18 @@ class CSVGetter {
             reader = new BufferedReader(new FileReader(path));
             String line;
             String csvSplitBy = ",";
+            int i = 0;
 
             while ((line = reader.readLine()) != null){
+                if (i == 0){
+                    i++;
+                    continue;
+                }
+
                 String[] rowFromFile = line.split(csvSplitBy);
                 SuicideStatisticsRow row = new SuicideStatisticsRow(rowFromFile[0], Integer.valueOf(rowFromFile[1]),
                         rowFromFile[2], rowFromFile[3], Integer.valueOf(rowFromFile[4]),
-                        Integer.valueOf(rowFromFile[5]), Integer.valueOf(rowFromFile[6]));
+                        Integer.valueOf(rowFromFile[5]), Double.valueOf(rowFromFile[6]));
 
                 /* Check to reality and null suicide count*/
                 if (nullSuicideCountCheck(row) && checkToReality(row)) {

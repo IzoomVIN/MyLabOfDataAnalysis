@@ -110,7 +110,8 @@ public class LogicProgram{
     }
 
     private boolean checkOfFileExist(String fileName){
-        return new File(String.format("../files/%s.csv", fileName)).exists();
+        String path = String.format("src/ru/files/%s.csv", fileName);
+        return new File(path).exists();
     }
 
     private boolean checkOfTableInList(String tableName){

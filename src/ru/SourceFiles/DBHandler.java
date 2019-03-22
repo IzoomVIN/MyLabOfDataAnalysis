@@ -56,10 +56,11 @@ public class DBHandler {
     }
 
     void setInformationToTable(String tableName, SuicideStatisticsRow row){
-        try(PreparedStatement statement = this.connection.prepareStatement(String.format("INSERT INTO %s ", tableName) +
+        try(PreparedStatement statement = this.connection.prepareStatement(String.
+                format("INSERT INTO %s ", tableName) +
                         "('Country', 'Year', 'Sex', 'Age', 'Suicides_Count', " +
                         "'Population', 'Suicides_to_100_K_Population') " +
-                        "VALUES(?, ?, ?, ?, ?, ?, ?")){
+                        "VALUES(?,?,?,?,?,?,?")){
             statement.setObject(1, row.getCountry());
             statement.setObject(2, row.getYear());
             statement.setObject(3, row.getSex());
@@ -68,7 +69,7 @@ public class DBHandler {
             statement.setObject(6, row.getPopulation());
             statement.setObject(7, row.getSuicidesTo100KPopulation());
 
-            statement.execute();
+            statement.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
         }
@@ -118,14 +119,15 @@ public class DBHandler {
 
     private void executeCreateTable(Statement statement,String tableName){
         try {
-            statement.execute(String.format("CREATE TABLE %s (\n", tableName) +
+            String sql = String.format("CREATE TABLE %s (\n", tableName) +
                     "Country TEXT PRIMARY KEY,\n" +
-                    "Year INTEGER PRIMARY KEY,\n" +
+                    "Year INT PRIMARY KEY,\n" +
                     "Sex TEXT PRIMARY KEY,\n" +
                     "Age TEXT PRIMARY KEY,\n" +
-                    "Suicides_Count INTEGER,\n" +
-                    "Population INTEGER,\n" +
-                    "Suicides_to_100_K_Population INTEGER\n);");
+                    "Suicides_Count INT,\n" +
+                    "Population INT,\n" +
+                    "Suicides_to_100_K_Population REAL);";
+            statement.execute(sql);
         }catch (SQLException e){
 //            e.printStackTrace();
         }
