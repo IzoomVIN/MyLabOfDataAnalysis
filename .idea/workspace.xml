@@ -3,10 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="9df2b28e-40ea-4edc-beac-5cadf70fb812" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyLabOfDataAnalysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyLabOfDataAnalysis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/DB/SuicideDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/DB/SuicideDB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/GUI/ViewTableWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/GUI/ViewTableWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/SourceFiles/CSVGetter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/SourceFiles/CSVGetter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/SourceFiles/DBHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/SourceFiles/DBHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/SourceFiles/LogicProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyLabOfDataAnalysis/ru/SourceFiles/LogicProgram.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/DB/.help" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/DB/SuicideDB" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/DB/SuicideDB.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/DB/SuicideDB.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/DB/SuicideDB.db;" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/GUI/GraphicViewWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/GUI/GraphicViewWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/SourceFiles/CSVGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/SourceFiles/CSVGetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/SourceFiles/DBHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/SourceFiles/DBHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ru/SourceFiles/LogicProgram.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/SourceFiles/LogicProgram.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,66 +31,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/DBHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+            <state relative-caret-position="364">
+              <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/CSVGetter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#checkToReality#0;class#CSVGetter#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="78" selection-start-line="78" selection-end-line="78" />
-              <folding>
-                <element signature="method#AddTableViewWindow#0;class#AddTableViewWindow#0" />
-                <element signature="e#1439#1440#0" expanded="true" />
-                <element signature="e#1489#1490#0" expanded="true" />
-                <element signature="method#infoBox#0;class#AddTableViewWindow#0" />
-                <element signature="e#2023#2024#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/GUI/MainMenuWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="67" selection-start-line="67" selection-end-line="67" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1054#1055#0" expanded="true" />
-                <element signature="e#1100#1101#0" expanded="true" />
-                <element signature="e#1721#1722#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,12 +46,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/LogicProgram.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="112" column="69" selection-start-line="112" selection-start-column="69" selection-end-line="112" selection-end-column="69" />
+            <state relative-caret-position="374">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#addAllTableName#0;class#LogicProgram#0" />
-                <element signature="method#checkOfTableInList#0;class#LogicProgram#0" />
+                <element signature="method#addALtoMM#0;class#LogicProgram#0" />
+                <element signature="method#addALtoATV#0;class#LogicProgram#0" />
               </folding>
             </state>
           </provider>
@@ -99,15 +60,85 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+            <state relative-caret-position="161">
+              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#757#758#0" expanded="true" />
+                <element signature="e#794#795#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.form">
+        <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicViewWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-306">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#786#787#0" expanded="true" />
+                <element signature="e#821#822#0" expanded="true" />
+                <element signature="e#1592#1593#0" expanded="true" />
+                <element signature="e#1629#1630#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/PlotDataRow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+              <folding>
+                <element signature="e#133#134#0" expanded="true" />
+                <element signature="e#161#162#0" expanded="true" />
+                <element signature="e#192#193#0" expanded="true" />
+                <element signature="e#219#220#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/javax/swing/JFrame.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="407" column="15" selection-start-line="407" selection-start-column="15" selection-end-line="407" selection-end-column="15" />
+              <folding>
+                <element signature="e#15196#15197#0" expanded="true" />
+                <element signature="e#15240#15241#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.form">
           <provider selected="true" editor-type-id="ui-designer" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -137,22 +168,28 @@
         <option value="$PROJECT_DIR$/src/ru/GUI/AddTableView.form" />
         <option value="$PROJECT_DIR$/src/ru/GUI/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/ru/GUI/CorrelationMatrixViewWindow.form" />
-        <option value="$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.form" />
         <option value="$PROJECT_DIR$/src/ru/SourceFiles/ButtonLogic.java" />
         <option value="$PROJECT_DIR$/src/ru/GUI/MainMenuWindow.form" />
         <option value="$PROJECT_DIR$/src/ru/SourceFiles/LogicProgramm.java" />
-        <option value="$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.form" />
-        <option value="$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.java" />
         <option value="$PROJECT_DIR$/src/ru/GUI/MainMenuWindow.java" />
-        <option value="$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.java" />
-        <option value="$PROJECT_DIR$/src/ru/SourceFiles/LogicProgram.java" />
         <option value="$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java" />
         <option value="$PROJECT_DIR$/src/ru/SourceFiles/CSVGetter.java" />
+        <option value="$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.java" />
+        <option value="$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.form" />
         <option value="$PROJECT_DIR$/src/ru/SourceFiles/DBHandler.java" />
+        <option value="$PROJECT_DIR$/src/ru/SourceFiles/MyTabelModel.java" />
+        <option value="$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.form" />
+        <option value="$PROJECT_DIR$/src/ru/SourceFiles/MyTableModel.java" />
+        <option value="$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.java" />
+        <option value="$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.form" />
+        <option value="$PROJECT_DIR$/src/ru/SourceFiles/LogicProgram.java" />
+        <option value="$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.java" />
+        <option value="$PROJECT_DIR$/src/ru/SourceFiles/PlotDataRow.java" />
+        <option value="$PROJECT_DIR$/src/ru/GUI/GraphicViewWindow.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="width" value="1005" />
     <option name="height" value="1090" />
@@ -201,7 +238,26 @@
               <item name="MyLabOfDataAnalysis" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyLabOfDataAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyLabOfDataAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
+              <item name="GUI" type="462c0819:PsiDirectoryNode" />
+              <item name="GraphicViewWindow" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="MyLabOfDataAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="MyLabOfDataAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ru" type="462c0819:PsiDirectoryNode" />
               <item name="SourceFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="MyLabOfDataAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
@@ -210,7 +266,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553293487744" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553880214267" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -294,9 +350,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -305,7 +362,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3324397" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3324397" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -323,6 +380,34 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2671141" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3324397" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24966443" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout-to-restore>
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -413,22 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/javax/swing/JFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-505">
-          <caret line="376" column="16" selection-start-line="376" selection-start-column="16" selection-end-line="376" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicViewWindow.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicViewWindow.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
@@ -436,9 +505,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/GUI/CorrelationMatrixViewWindow.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/GUI/MainMenuWindow.form">
@@ -451,66 +517,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/GUI/MainMenuWindow.java">
+    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/org/sqlite/Unused.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        <state relative-caret-position="119">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/org/sqlite/Conn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="355" selection-start-line="355" selection-end-line="355" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1721#1722#0" expanded="true" />
+            <element signature="e#8054#8055#0" expanded="true" />
+            <element signature="e#8079#8080#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.java">
+    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/org/sqlite/DB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        <state relative-caret-position="133">
+          <caret line="316" selection-start-line="316" selection-end-line="316" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.form">
+    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/org/sqlite/RS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="126" selection-start-line="126" selection-end-line="126" />
+          <folding>
+            <element signature="e#2146#2147#0" expanded="true" />
+            <element signature="e#2173#2174#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/sqlite-jdbc-3.7.2.jar!/org/sqlite/Stmt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.form">
       <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/LogicProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="112" column="69" selection-start-line="112" selection-start-column="69" selection-end-line="112" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#addAllTableName#0;class#LogicProgram#0" />
-            <element signature="method#checkOfTableInList#0;class#LogicProgram#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-          <folding>
-            <element signature="method#AddTableViewWindow#0;class#AddTableViewWindow#0" />
-            <element signature="e#1439#1440#0" expanded="true" />
-            <element signature="e#1489#1490#0" expanded="true" />
-            <element signature="method#infoBox#0;class#AddTableViewWindow#0" />
-            <element signature="e#2023#2024#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/CSVGetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
+        <state relative-caret-position="391">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#checkToReality#0;class#CSVGetter#0" />
@@ -518,12 +574,183 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.sql/java/sql/ResultSet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="175" column="7" lean-forward="true" selection-start-line="175" selection-start-column="7" selection-end-line="175" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/GUI/AddTableViewWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="e#1439#1440#0" expanded="true" />
+            <element signature="e#1489#1490#0" expanded="true" />
+            <element signature="method#infoBox#0;class#AddTableViewWindow#0" />
+            <element signature="e#2023#2024#0" expanded="true" />
+            <element signature="e#2061#2062#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/javax/swing/table/TableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/io/Serializable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="178" column="17" selection-start-line="178" selection-start-column="17" selection-end-line="178" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/javax/swing/table/TableColumnModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="41" column="17" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/javax/swing/table/JTableHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="151" column="33" selection-start-line="151" selection-start-column="33" selection-end-line="151" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/javax/swing/table/AbstractTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="60" column="29" selection-start-line="60" selection-start-column="29" selection-end-line="60" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/DBHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="61" column="45" selection-start-line="61" selection-start-column="45" selection-end-line="61" selection-end-column="45" />
+        <state relative-caret-position="364">
+          <caret line="34" column="16" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/SuicideStatisticsRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/MyTableModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="46" column="18" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#433#434#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#193#194#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.desktop/javax/swing/JFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="407" column="15" selection-start-line="407" selection-start-column="15" selection-end-line="407" selection-end-column="15" />
+          <folding>
+            <element signature="e#15196#15197#0" expanded="true" />
+            <element signature="e#15240#15241#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/LogicProgram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#addALtoMM#0;class#LogicProgram#0" />
+            <element signature="method#addALtoATV#0;class#LogicProgram#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/GUI/MainMenuWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="35" column="55" lean-forward="true" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1100#1101#0" expanded="true" />
+            <element signature="e#1721#1722#0" expanded="true" />
+            <element signature="e#1758#1759#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.form">
+      <provider selected="true" editor-type-id="ui-designer" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicParametrsWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/SourceFiles/PlotDataRow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <element signature="e#133#134#0" expanded="true" />
+            <element signature="e#161#162#0" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
+            <element signature="e#219#220#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/GUI/ViewTableWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="41" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#757#758#0" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/GUI/GraphicViewWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-306">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#821#822#0" expanded="true" />
+            <element signature="e#1592#1593#0" expanded="true" />
+            <element signature="e#1629#1630#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -7,13 +7,12 @@ import java.util.List;
 
 import ru.GUI.*;
 
-import javax.swing.*;
 
 public class LogicProgram{
     private DBHandler dbh;
     private MainMenuWindow mainMenu = new MainMenuWindow();
     private AddTableViewWindow aTView = new AddTableViewWindow();
-    private ViewTableWindow vtView = new ViewTableWindow();
+    private ViewTableWindow vtView;
 
     private LogicProgram(){
         try {
@@ -24,6 +23,7 @@ public class LogicProgram{
         addALtoATV();
         addALtoMM();
         addAllTableName();
+        addALtoVT();
     }
 
     private void start(){
@@ -38,7 +38,8 @@ public class LogicProgram{
 
         mainMenu.setActionListenerVT(e -> {
             String tableName = mainMenu.getSelectedValue();
-            fillingOfTable(tableName);
+            List<SuicideStatisticsRow> data = dbh.getAllRowsFromTable(tableName);
+            vtView = new ViewTableWindow(data);
             mainMenu.stop();
             vtView.start();
         });
@@ -53,6 +54,10 @@ public class LogicProgram{
         aTView.setActionListenerOK(e -> addDataToDB());
     }
 
+    private void addALtoVT(){
+
+    }
+
     private void addDataToDB(){
         String tableName = aTView.getTableName();
         String fileName = aTView.getFileName();
@@ -63,23 +68,21 @@ public class LogicProgram{
             return;
         }
 
-        String message = dbh.createTable(tableName);
-
-        if (checkOfTableExist(message)){
-            aTView.infoBox(message, "Error");
-            if (!checkOfTableInList(tableName)){
-                mainMenu.addTableInList(tableName);
-            }
-            aTView.clearTextLines();
+        if (checkOfTableExist(tableName)) {
+            aTView.infoBox("This table is exist", "Error");
             return;
         }
 
+        dbh.createTable(tableName);
         mainMenu.addTableInList(tableName);
 
         List<SuicideStatisticsRow> table= CSVGetter.getListData(fileName);
 
+        int count = 0;
+
         for(SuicideStatisticsRow row: table){
             dbh.setInformationToTable(tableName, row);
+            System.out.printf("Count: %d\n",++count);
         }
 
         aTView.infoBox("Table is created", "Successful");
@@ -101,27 +104,18 @@ public class LogicProgram{
         }
     }
 
-    private void fillingOfTable(String tableName){
-
-    }
-
-    private boolean checkOfTableExist(String message){
-        return message != null;
-    }
-
-    private boolean checkOfFileExist(String fileName){
-        String path = String.format("src/ru/files/%s.csv", fileName);
-        return new File(path).exists();
-    }
-
-    private boolean checkOfTableInList(String tableName){
-        ArrayList <String> array = mainMenu.getAllTableName();
-        for(String name: array){
+    private boolean checkOfTableExist(String tableName){
+        for(String name: mainMenu.getAllTableName()){
             if (tableName.equals(name)){
                 return true;
             }
         }
         return false;
+    }
+
+    private boolean checkOfFileExist(String fileName){
+        String path = String.format("src/ru/files/%s.csv", fileName);
+        return new File(path).exists();
     }
 
     public static void main(String[] args){

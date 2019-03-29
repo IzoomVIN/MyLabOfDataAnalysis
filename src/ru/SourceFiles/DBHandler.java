@@ -60,7 +60,7 @@ public class DBHandler {
                 format("INSERT INTO %s ", tableName) +
                         "('Country', 'Year', 'Sex', 'Age', 'Suicides_Count', " +
                         "'Population', 'Suicides_to_100_K_Population') " +
-                        "VALUES(?,?,?,?,?,?,?")){
+                        "VALUES(?,?,?,?,?,?,?)")){
             statement.setObject(1, row.getCountry());
             statement.setObject(2, row.getYear());
             statement.setObject(3, row.getSex());
@@ -75,37 +75,32 @@ public class DBHandler {
         }
     }
 
-    String createTable(String tableName){
+    void createTable(String tableName){
         try(Statement statement = this.connection.createStatement()){
-            ResultSet names = statement.executeQuery("SELECT*FROM sqlite_master\n" +
-                    "WHERE type='table';");
-            if (names != null) {
-                boolean FLAG = true;
-                while(names.next()) {
-                    if (tableName.equals(names.getString(""))) {
-                        FLAG = false;
-                        break;
-                    }
-                }
-                if (!FLAG){
-                    return "Table with this name is exist";
-                }
-            }
-            executeCreateTable(statement, tableName);
+            String sql = String.format("CREATE TABLE %s (\n", tableName) +
+                    "Country TEXT,\n" +
+                    "Year INTEGER,\n" +
+                    "Sex TEXT,\n" +
+                    "Age TEXT,\n" +
+                    "Suicides_Count INTEGER,\n" +
+                    "Population INTEGER,\n" +
+                    "Suicides_to_100_K_Population REAL,\n" +
+                    "PRIMARY KEY (Country, Year, Sex, Age)" +
+                    ");";
+            statement.execute(sql);
         }catch(SQLException e){
             System.out.print(e.getMessage());
         }
-        return null;
     }
 
     ArrayList<String> getAllTMfromDB(){
         ArrayList<String> outputArray = new ArrayList<>();
         try(Statement statement = this.connection.createStatement()) {
-            ResultSet names = statement.executeQuery("SELECT*FROM sqlite_master\n" +
+            ResultSet names = statement.executeQuery("SELECT name FROM sqlite_master\n" +
                     "WHERE type='table';");
             if (names != null) {
                 while(names.next()) {
-                    outputArray.add(names.getString(""));
+                    outputArray.add(names.getString(1));
                 }
             }else{
                 outputArray = null;
@@ -117,19 +112,4 @@ public class DBHandler {
         return outputArray;
     }
 
-    private void executeCreateTable(Statement statement,String tableName){
-        try {
-            String sql = String.format("CREATE TABLE %s (\n", tableName) +
-                    "Country TEXT PRIMARY KEY,\n" +
-                    "Year INT PRIMARY KEY,\n" +
-                    "Sex TEXT PRIMARY KEY,\n" +
-                    "Age TEXT PRIMARY KEY,\n" +
-                    "Suicides_Count INT,\n" +
-                    "Population INT,\n" +
-                    "Suicides_to_100_K_Population REAL);";
-            statement.execute(sql);
-        }catch (SQLException e){
-//            e.printStackTrace();
-        }
-    }
 }
