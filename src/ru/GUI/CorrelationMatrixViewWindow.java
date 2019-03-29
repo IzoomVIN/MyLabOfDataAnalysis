@@ -20,7 +20,7 @@ public class CorrelationMatrixViewWindow extends JFrame {
         this.myGVWCallBack = myGVWCallBack;
 
         // Realization of creating frame in center of Window;
-        setMinimumSize(new Dimension(200,90));
+        setMinimumSize(new Dimension(210,90));
         setLocationRelativeTo(null);
 
         setContentPane(panel1);
