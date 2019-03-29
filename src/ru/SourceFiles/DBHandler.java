@@ -2,6 +2,7 @@ package ru.SourceFiles;
 
 import org.sqlite.JDBC;
 
+import java.awt.geom.Arc2D;
 import java.sql.*;
 
 import java.util.ArrayList;
@@ -32,7 +33,54 @@ public class DBHandler {
         this.connection = DriverManager.getConnection(String.format(CONNECT_ADDRESS, dBName));
     }
 
-    public List<SuicideStatisticsRow> getAllRowsFromTable(String tableName){
+    List<PlotDataRow> getDataForAll(String tableName){
+        try(Statement statement = this.connection.createStatement()){
+            List<PlotDataRow> resultList = new ArrayList<>();
+
+            String sql = String.format("SELECT Year, SUM(Suicides_Count) FROM %s\n" +
+                    "GROUP BY Year;", tableName);
+
+            // from resultSet we take rows of result SQL search
+            // in ResultSet we give SQL code
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            //get all rows from result set and give result to resultList
+            while (resultSet.next()){
+                resultList.add(new PlotDataRow(
+                        String.valueOf(resultSet.getInt("Year")),
+                        (double) resultSet.getInt("SUM(Suicides_Count)")));
+            }
+            return resultList;
+        }catch(SQLException e){
+            return Collections.emptyList();
+        }
+    }
+
+    List<PlotDataRow> getDataForRus(String tableName){
+        try(Statement statement = this.connection.createStatement()){
+            List<PlotDataRow> resultList = new ArrayList<>();
+
+            String sql = String.format("SELECT Year, SUM(Suicides_Count) FROM %s\n" +
+                    "WHERE Country = 'Russian Federation'\n" +
+                    "GROUP BY Year;", tableName);
+
+            // from resultSet we take rows of result SQL search
+            // in ResultSet we give SQL code
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            //get all rows from result set and give result to resultList
+            while (resultSet.next()){
+                resultList.add(new PlotDataRow(
+                        String.valueOf(resultSet.getInt("Year")),
+                        (double) resultSet.getInt("SUM(Suicides_Count)")));
+            }
+            return resultList;
+        }catch(SQLException e){
+            return Collections.emptyList();
+        }
+    }
+
+    List<SuicideStatisticsRow> getAllRowsFromTable(String tableName){
         // Statement is use for completing SQL search
         try(Statement statement = this.connection.createStatement()){
             List<SuicideStatisticsRow> resultList = new ArrayList<>();

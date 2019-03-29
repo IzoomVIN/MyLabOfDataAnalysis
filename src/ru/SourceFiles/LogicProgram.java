@@ -13,6 +13,8 @@ public class LogicProgram{
     private MainMenuWindow mainMenu = new MainMenuWindow();
     private AddTableViewWindow aTView = new AddTableViewWindow();
     private ViewTableWindow vtView;
+    private GraphicParametrsWindow gPWindow;
+    private GraphicViewWindow gView;
 
     private LogicProgram(){
         try {
@@ -23,7 +25,6 @@ public class LogicProgram{
         addALtoATV();
         addALtoMM();
         addAllTableName();
-        addALtoVT();
     }
 
     private void start(){
@@ -39,8 +40,9 @@ public class LogicProgram{
         mainMenu.setActionListenerVT(e -> {
             String tableName = mainMenu.getSelectedValue();
             List<SuicideStatisticsRow> data = dbh.getAllRowsFromTable(tableName);
-            vtView = new ViewTableWindow(data);
+            vtView = new ViewTableWindow(data, tableName);
             mainMenu.stop();
+            addALtoVT();
             vtView.start();
         });
     }
@@ -55,6 +57,69 @@ public class LogicProgram{
     }
 
     private void addALtoVT(){
+        vtView.setActionListenerToCancelButton(e -> {
+            mainMenu.start();
+            vtView.stop();
+            vtView = null;
+            if (gPWindow != null){
+                gPWindow.stop();
+                gPWindow = null;
+            }
+        });
+
+        vtView.setActionListenerToVGButton(e -> {
+            vtView.stop();
+            if (gPWindow == null){
+                gPWindow = new GraphicParametrsWindow(vtView.getTableName());
+            }
+            addALtoGPW();
+            gPWindow.start();
+        });
+    }
+
+    private void addALtoGPW(){
+        gPWindow.setActionListenerToButCancel(e -> {
+            vtView.start();
+            gPWindow.stop();
+            gPWindow = null;
+        });
+
+        gPWindow.setActionListenerToButtAll(e -> {
+            List<PlotDataRow> data;
+
+            data = dbh.getDataForAll(gPWindow.getTableName());
+
+            gView = GraphicViewWindow.GraphicViewWindowCreate("All Countries", data, () ->{
+                gView.stop();
+                vtView.start();
+                gView = null;
+            });
+
+            gView.start();
+
+            gPWindow.stop();
+            gPWindow = null;
+        });
+
+        gPWindow.setActionListenerToButtRus(e -> {
+            List<PlotDataRow> data;
+
+            data = dbh.getDataForRus(gPWindow.getTableName());
+
+            gView = GraphicViewWindow.GraphicViewWindowCreate("In Russia", data, () ->{
+                gView.stop();
+                vtView.start();
+                gView = null;
+            });
+
+            gView.start();
+
+            gPWindow.stop();
+            gPWindow = null;
+        });
+    }
+
+    private void addALtoCMView(){
 
     }
 
