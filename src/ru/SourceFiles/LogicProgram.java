@@ -1,6 +1,10 @@
 package ru.SourceFiles;
 
 import java.io.File;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.math.MathContext;
+import java.math.RoundingMode;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +19,7 @@ public class LogicProgram{
     private ViewTableWindow vtView;
     private GraphicParametrsWindow gPWindow;
     private GraphicViewWindow gView;
+    private CorrelationMatrixViewWindow cMView;
 
     private LogicProgram(){
         try {
@@ -75,6 +80,8 @@ public class LogicProgram{
             addALtoGPW();
             gPWindow.start();
         });
+
+        vtView.setActionListenerToVCMButton(e -> viewCorrMatrixLogic(vtView.getTableName()));
     }
 
     private void addALtoGPW(){
@@ -117,10 +124,6 @@ public class LogicProgram{
             gPWindow.stop();
             gPWindow = null;
         });
-    }
-
-    private void addALtoCMView(){
-
     }
 
     private void addDataToDB(){
@@ -167,6 +170,66 @@ public class LogicProgram{
         {
             return;
         }
+    }
+
+    private void viewCorrMatrixLogic(String tableName){
+        double[][] data = makeDataToCM(tableName);
+        cMView = new CorrelationMatrixViewWindow(data, () -> {
+            cMView.stop();
+            vtView.start();
+            cMView = null;
+        });
+
+        cMView.start();
+        vtView.stop();
+    }
+
+    private double[][] makeDataToCM(String tableName){
+        List<SuicideStatisticsRow> data = dbh.getAllRowsFromTable(tableName);
+        double[][] dataToCM = new double[2][2];
+        int[][] myData = new int[data.size()][2];
+
+        BigInteger sumOfY = BigInteger.valueOf(0);
+        BigInteger sumOfC = BigInteger.valueOf(0);
+
+        for (int i = 0; i < data.size(); i++){
+            myData[i][0] = data.get(i).getYear();
+            myData[i][1] = data.get(i).getSuicidesCount();
+            sumOfY = sumOfY.add(BigInteger.valueOf(data.get(i).getYear()));
+            sumOfC = sumOfC.add(BigInteger.valueOf(data.get(i).getSuicidesCount()));
+        }
+
+        BigInteger sumCY = BigInteger.valueOf(0);
+        BigInteger sumC2 = BigInteger.valueOf(0);
+        BigInteger sumY2 = BigInteger.valueOf(0);
+
+        for (int[] myDatum : myData) {
+            sumCY = sumCY.add(BigInteger.valueOf(myDatum[0] * myDatum[1]).subtract(sumOfC.multiply(sumOfY)));
+            sumC2 = sumC2.add(BigInteger.valueOf(myDatum[0] * myDatum[0]).subtract(sumOfC.multiply(sumOfC)));
+            sumY2 = sumY2.add(BigInteger.valueOf(myDatum[1] * myDatum[1]).subtract(sumOfY.multiply(sumOfY)));
+        }
+
+        dataToCM[0][0] = 1;
+        dataToCM[1][1] = 1;
+        dataToCM[0][1] = Double.valueOf(new BigDecimal(
+                sumCY.multiply(
+                        BigInteger.valueOf(myData.length)
+                )
+        ).divide(
+                new BigDecimal(
+                        sumC2.multiply(
+                                BigInteger.valueOf(myData.length)
+                        ).multiply(
+                                sumY2.multiply(
+                                        BigInteger.valueOf(myData.length)
+                                )
+                        ).sqrt()
+                ),
+                MathContext.DECIMAL32
+        ).toString());
+        dataToCM[1][0] = dataToCM[0][1];
+
+        return dataToCM;
     }
 
     private boolean checkOfTableExist(String tableName){
