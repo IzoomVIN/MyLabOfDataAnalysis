@@ -1,8 +1,6 @@
 package ru.SourceFiles;
 
 import org.sqlite.JDBC;
-
-import java.awt.geom.Arc2D;
 import java.sql.*;
 
 import java.util.ArrayList;

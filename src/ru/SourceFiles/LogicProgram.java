@@ -2,9 +2,7 @@ package ru.SourceFiles;
 
 import java.io.File;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.math.MathContext;
-import java.math.RoundingMode;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -187,49 +185,79 @@ public class LogicProgram{
     private double[][] makeDataToCM(String tableName){
         List<SuicideStatisticsRow> data = dbh.getAllRowsFromTable(tableName);
         double[][] dataToCM = new double[2][2];
-        int[][] myData = new int[data.size()][2];
+        double[][] myData = normalizeData(data);
 
-        BigInteger sumOfY = BigInteger.valueOf(0);
-        BigInteger sumOfC = BigInteger.valueOf(0);
+        BigDecimal midOfY = BigDecimal.valueOf(0);
+        BigDecimal midOfC = BigDecimal.valueOf(0);
+        BigDecimal sumCY = BigDecimal.valueOf(0);
+        BigDecimal sumC2 = BigDecimal.valueOf(0);
+        BigDecimal sumY2 = BigDecimal.valueOf(0);
 
-        for (int i = 0; i < data.size(); i++){
-            myData[i][0] = data.get(i).getYear();
-            myData[i][1] = data.get(i).getSuicidesCount();
-            sumOfY = sumOfY.add(BigInteger.valueOf(data.get(i).getYear()));
-            sumOfC = sumOfC.add(BigInteger.valueOf(data.get(i).getSuicidesCount()));
+        for (double[] row: myData){
+            midOfY = midOfY.add(BigDecimal.valueOf(row[0]));
+            midOfC = midOfC.add(BigDecimal.valueOf(row[1]));
         }
 
-        BigInteger sumCY = BigInteger.valueOf(0);
-        BigInteger sumC2 = BigInteger.valueOf(0);
-        BigInteger sumY2 = BigInteger.valueOf(0);
+        midOfY = midOfY.divide(BigDecimal.valueOf(myData.length), MathContext.DECIMAL32);
+        midOfC = midOfC.divide(BigDecimal.valueOf(myData.length), MathContext.DECIMAL32);
 
-        for (int[] myDatum : myData) {
-            sumCY = sumCY.add(BigInteger.valueOf(myDatum[0] * myDatum[1]).subtract(sumOfC.multiply(sumOfY)));
-            sumC2 = sumC2.add(BigInteger.valueOf(myDatum[0] * myDatum[0]).subtract(sumOfC.multiply(sumOfC)));
-            sumY2 = sumY2.add(BigInteger.valueOf(myDatum[1] * myDatum[1]).subtract(sumOfY.multiply(sumOfY)));
+        for (double[] myDatum : myData) {
+            BigDecimal localVariable = null;
+            localVariable = BigDecimal.valueOf(myDatum[0]).subtract(midOfY);
+            sumCY = sumCY.add(localVariable.multiply(
+                    BigDecimal.valueOf(myDatum[1]).subtract(midOfC)
+            ));
+
+            localVariable = BigDecimal.valueOf(myDatum[0]).subtract(midOfY);
+            localVariable = localVariable.multiply(localVariable);
+            sumC2 = sumC2.add(localVariable);
+
+            localVariable = BigDecimal.valueOf(myDatum[1]).subtract(midOfC);
+            localVariable = localVariable.multiply(localVariable);
+            sumY2 = sumY2.add(localVariable);
         }
+
+        BigDecimal sqrtOfSumCY = sumY2.multiply(sumC2);
+        sqrtOfSumCY = sqrtOfSumCY.sqrt(MathContext.DECIMAL32);
 
         dataToCM[0][0] = 1;
         dataToCM[1][1] = 1;
-        dataToCM[0][1] = Double.valueOf(new BigDecimal(
-                sumCY.multiply(
-                        BigInteger.valueOf(myData.length)
-                )
-        ).divide(
-                new BigDecimal(
-                        sumC2.multiply(
-                                BigInteger.valueOf(myData.length)
-                        ).multiply(
-                                sumY2.multiply(
-                                        BigInteger.valueOf(myData.length)
-                                )
-                        ).sqrt()
-                ),
-                MathContext.DECIMAL32
-        ).toString());
+        dataToCM[0][1] = Double.valueOf(
+                sumCY.divide(sqrtOfSumCY, MathContext.DECIMAL32).toString()
+        );
         dataToCM[1][0] = dataToCM[0][1];
 
         return dataToCM;
+    }
+
+    private double[][] normalizeData(List<SuicideStatisticsRow> data){
+        int maxYear = 0;
+        int minYear = 3000;
+        int maxSC = 0;
+        int minSC = 3000000;
+
+        double[][] result = new double[data.size()][2];
+
+        for (SuicideStatisticsRow row : data){
+            if (row.getYear() > maxYear){
+                maxYear = row.getYear();
+            }else if (row.getYear() < minYear){
+                minYear = row.getYear();
+            }
+
+            if(row.getSuicidesCount() > maxSC){
+                maxSC = row.getSuicidesCount();
+            }else if (row.getSuicidesCount() < minSC){
+                minSC = row.getSuicidesCount();
+            }
+        }
+
+        for (int i = 0; i < data.size(); i++){
+            result[i][0] = (double) (data.get(i).getYear() - minYear)/(maxYear - minYear);
+            result[i][1] = (double) (data.get(i).getSuicidesCount() - minSC)/(maxSC - minSC);
+        }
+
+        return result;
     }
 
     private boolean checkOfTableExist(String tableName){
